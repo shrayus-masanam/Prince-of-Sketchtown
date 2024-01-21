@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 06 Scripts</name>
+    <events>
+        <include>Level 04 Scripts</include>
+        <event-block sid="124367422268494">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="715914833248249" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="635660840321136" type="Flash" />
+                <action id="-13" name="Set boolean" sid="892533964140264" type="Prince">
+                    <param id="0" name="Instance variable">hasGun</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="455539337374650" type="Prince">
+                    <param id="0" name="Instance variable">hasKnife</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

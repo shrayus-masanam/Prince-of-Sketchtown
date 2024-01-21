@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 08 Scripts</name>
+    <events>
+        <include>Level 07 Scripts</include>
+        <event-block sid="567101234811222">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="693320611602541" type="System">
+                    <param id="0" name="First value">LayoutName</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">&quot;Level 8&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="912697329869273" type="Dirt">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="629057417134206">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="836697657960411" type="Arrow">
+                    <param id="0" name="Object">RedCarpet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="874652896999091" type="Arrow" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

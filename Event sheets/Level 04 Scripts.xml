@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 04 Scripts</name>
+    <events>
+        <include>Level 03 Scripts</include>
+        <event-block sid="885568848777634">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="857526925162338" type="ArrowStopper">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="807400251282657" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="428086095801857">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="886113023784421" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="185918601860094" type="Archer">
+                    <param id="0" name="X">Prince.X</param>
+                    <param id="1" name="Y">Prince.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="647220438212679" type="Archer">
+                    <param id="0" name="Object">Arrow</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="106432141795925">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="224153800272509" type="Arrow">
+                    <param id="0" name="Object">Prince</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="946461319537462">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="152413844593850" type="Prince">
+                            <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="530702872777000" type="Prince">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="146051863299593" type="HealthBar">
+                            <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                        </action>
+                        <action id="0" name="Set text" sid="760698979752992" type="HealthValue">
+                            <param id="0" name="Text">Prince.Health</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="921546880594859" type="Arrow" />
+                    </actions>
+                </event-block>
+                <event-block sid="924750150806799">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="226422533489206" type="Prince">
+                            <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="459526807421678" type="Arrow">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="229682881337041">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="467923697347171" type="Bullet">
+                    <param id="0" name="Object">Archer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="633589135720813" type="Bullet" />
+                <action id="-8" name="Set angle" sid="205925489559664" type="Archer">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="512685970915336" type="Archer">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="765342360627721" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="316166556563548" type="Archer" />
+                <action id="-9" name="Destroy" sid="924962517187803" type="Arrow" />
+                <action id="-10" name="Set value" sid="703745854933658" type="Archer">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="588890786504965">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="128159594334987" type="Arrow">
+                    <param id="0" name="Object">ArrowStopper</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="710700919085403" type="Arrow" />
+            </actions>
+        </event-block>
+        <event-block sid="621749663653133">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="756289666225550" type="Bullet">
+                    <param id="0" name="Object">Arrow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="433536003299932" type="Bullet" />
+                <action id="-9" name="Destroy" sid="453891460886185" type="Arrow" />
+                <action id="0" name="Spawn another object" sid="897360492307234" type="Bullet">
+                    <param id="0" name="Object">Explosion</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="510116692462265" type="Explosion">
+                    <param id="0" name="X">floor(random(1,100))</param>
+                    <param id="1" name="Y">floor(random(1,100))</param>
+                </action>
+                <action id="-16" name="Wait" sid="381619443269731" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="425787970494235" type="Explosion" />
+            </actions>
+        </event-block>
+        <event-block sid="752613509620581">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="641567326992533" type="Archer">
+                    <param id="0" name="Object">Prince</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="554235811339749" type="Prince">
+                    <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="218895981183440" type="Archer">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="679522750503367" type="Archer">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="686958500633708" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="479124354655715" type="Archer" />
+                <action id="-9" name="Destroy" sid="479726688823042" type="Arrow" />
+                <action id="-10" name="Set value" sid="250334600052690" type="Archer">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

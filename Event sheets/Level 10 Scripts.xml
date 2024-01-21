@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 10 Scripts</name>
+    <events>
+        <include>Level 08 Scripts</include>
+        <event-block sid="295579502512018">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="175060131713929" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="328909790264988" type="System">
+                    <param id="0" name="Width">1708</param>
+                    <param id="1" name="Height">960</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="207201017073299" type="Prince">
+                    <param id="0" name="Instance variable">hasGun</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-8" name="Set angle" sid="954363942269637" type="Boss">
+                    <param id="0" name="Angle">random(360)</param>
+                </action>
+                <action id="-1" name="Set X" sid="496128377237606" type="HealthBar">
+                    <param id="0" name="X">-350</param>
+                </action>
+                <action id="-2" name="Set Y" sid="873329088419012" type="HealthBar">
+                    <param id="0" name="Y">-200</param>
+                </action>
+                <action id="-1" name="Set X" sid="377464827655555" type="HealthValue">
+                    <param id="0" name="X">-300</param>
+                </action>
+                <action id="-2" name="Set Y" sid="713944154954723" type="HealthValue">
+                    <param id="0" name="Y">-210</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="675032350338684">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="382651205444238" type="Boss">
+                    <param id="0" name="Object">BossEdge</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="313926546291290" type="Boss">
+                    <param id="0" name="X">Prince.X</param>
+                    <param id="1" name="Y">Prince.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="521124498858467">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="711938348954647" type="Boss">
+                    <param id="0" name="Object">Prince</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="164184341750132" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">2.5</param>
+                </action>
+                <action id="-5" name="Set width" sid="261437383710754" type="HealthBar">
+                    <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="809093208047198" type="HealthValue">
+                    <param id="0" name="Text">Prince.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="985138553908315">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="322104283858042" type="Boss">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="740156041098229" type="Boss">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-5" name="Set width" sid="872732242689642" type="BossBar">
+                    <param id="0" name="Width">Boss.Health * BossBar.Width / Boss.MaxHealth + 3</param>
+                </action>
+                <action id="-9" name="Destroy" sid="671903520887916" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="701664230911056">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="794526535504474" type="Boss">
+                    <param id="0" name="Instance variable">Defeated</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="463284378917758">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="237601414752578" type="System">
+                            <param id="0" name="Interval (seconds)">2.8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="797885575054063" type="Bullet">
+                            <param id="0" name="Object">BulletDead</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="109087503885273" type="Bullet" />
+                        <action id="-16" name="Wait" sid="935450381479648" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="554820584132816" type="BulletDead" />
+                    </actions>
+                </event-block>
+                <event-block sid="369778834360868">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="882417687619565" type="System">
+                            <param id="0" name="Interval (seconds)">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="487441694693202" type="ArcherSpawner">
+                            <param id="0" name="Object">Archer</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="963186580896444" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="699499725627468" type="Archer" />
+                    </actions>
+                </event-block>
+                <event-block sid="886613993041306">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="117056559270368" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="701328084011515" type="SoldierSpawner">
+                            <param id="0" name="Object">Soldier</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="211597800825873" type="System">
+                            <param id="0" name="Seconds">10</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="869427856325017" type="Soldier" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="574034109126663">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="740553688326641" type="Boss">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="736765011682907" type="Boss">
+                    <param id="0" name="Instance variable">Defeated</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="525941096625135" type="Prince">
+                    <param id="0" name="Instance variable">Invincible</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="274273881707075" type="Archer">
+                    <param id="0" name="Object">Faded</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="681999233957823" type="Archer" />
+                <action id="0" name="Spawn another object" sid="397896108733807" type="Soldier">
+                    <param id="0" name="Object">Faded</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="608187424118607" type="Soldier" />
+                <action behavior="Fade" id="1" name="Start fade" sid="601861546313541" type="Faded" />
+                <action behavior="Bullet" id="0" name="Set speed" sid="137524461507727" type="Boss">
+                    <param id="0" name="Speed">0</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="984315349909525" type="Prince">
+                    <param id="0" name="Magnitude">20</param>
+                    <param id="1" name="Duration">5</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="505993079599585" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="728057696196853" type="Boss">
+                    <param id="0" name="Object">ExplosionLarge</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="881632550674937" type="Boss" />
+                <action behavior="Fade" id="1" name="Start fade" sid="996920971674348" type="ExplosionLarge" />
+                <action id="-16" name="Wait" sid="650125894188743" type="System">
+                    <param id="0" name="Seconds">5.0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="768748988085407" type="ExplosionLarge" />
+                <action disabled="1" id="-1" name="Set X" sid="595906904319753" type="Prince">
+                    <param id="0" name="X">873</param>
+                </action>
+                <action disabled="1" id="-2" name="Set Y" sid="308340495758144" type="Prince">
+                    <param id="0" name="Y">475</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="325084456964101" type="Prince">
+                    <param id="0" name="Magnitude">80</param>
+                    <param id="1" name="Duration">5</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="834817633343629" type="System">
+                    <param id="0" name="Seconds">5.0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="272522755177439" type="FadeOut" />
+                <action id="-16" name="Wait" sid="154802019589477" type="System">
+                    <param id="0" name="Seconds">8.0</param>
+                </action>
+                <action id="-43" name="Go to next/previous layout" sid="294158263821241" type="System">
+                    <param id="0" name="Which">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

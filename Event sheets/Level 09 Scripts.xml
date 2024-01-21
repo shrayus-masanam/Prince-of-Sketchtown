@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 09 Scripts</name>
+    <events>
+        <include>Level 08 Scripts</include>
+        <event-block sid="320344310336451">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="335469816521827" type="Prince">
+                    <param id="0" name="Object">EdgeMarker</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="936367814236017" type="EdgeMarker" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

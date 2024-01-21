@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="1">Main Menu</layout>
+        <layout active="1" order="3">Level 7</layout>
+        <layout order="4">Level 8</layout>
+        <layout order="5">Level 9</layout>
+        <layout order="6">Level 5</layout>
+        <layout order="7">Level 6</layout>
+        <layout order="10">Level 10</layout>
+        <layout order="12">Victory</layout>
+        <event-sheet order="2">Level 04 Scripts</event-sheet>
+        <event-sheet order="8">Level 02 Scripts</event-sheet>
+        <event-sheet order="9">Level 05 Scripts</event-sheet>
+        <event-sheet order="11">Level 10 Scripts</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Play/" />
+        <folder expanded="1" path="animation-folder/Level1/" />
+        <folder expanded="1" path="animation-folder/Prince/" />
+        <folder expanded="1" path="animation-folder/Surface/" />
+        <folder expanded="1" path="animation-folder/Dirt/" />
+        <folder expanded="1" path="animation-folder/DarkDirt/" />
+        <folder expanded="1" path="animation-folder/Spikes/" />
+        <folder expanded="1" path="animation-folder/HealthBar/" />
+        <folder expanded="1" path="animation-folder/Soldier/" />
+        <folder expanded="1" path="animation-folder/EdgeMarker/" />
+        <folder expanded="1" path="animation-folder/Gun/" />
+        <folder expanded="1" path="animation-folder/Bullet/" />
+        <folder expanded="1" path="animation-folder/Door/" />
+        <folder expanded="1" path="animation-folder/HealPot/" />
+        <folder expanded="1" path="animation-folder/HurtPot/" />
+        <folder expanded="1" path="animation-folder/Level2/" />
+        <folder expanded="1" path="animation-folder/Level3/" />
+        <folder expanded="1" path="animation-folder/Stone/" />
+        <folder expanded="1" path="animation-folder/DarkStone/" />
+        <folder expanded="1" path="animation-folder/Archer/" />
+        <folder expanded="1" path="animation-folder/Arrow/" />
+        <folder expanded="1" path="animation-folder/ArrowStopper/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Boss/" />
+        <folder expanded="1" path="animation-folder/BossBar/" />
+        <folder expanded="1" path="animation-folder/Explosion/" />
+        <folder expanded="1" path="animation-folder/BulletDead/" />
+        <folder expanded="1" path="animation-folder/Flash/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/InstaKill/" />
+        <folder expanded="1" path="animation-folder/IndoorWood/" />
+        <folder expanded="1" path="animation-folder/DirtUntouchable/" />
+        <folder expanded="1" path="animation-folder/Chandelier/" />
+        <folder expanded="1" path="animation-folder/Crate/" />
+        <folder expanded="1" path="animation-folder/DiningTable/" />
+        <folder expanded="1" path="animation-folder/PassiveBad/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/RedCarpet/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/ArcherSpawner/" />
+        <folder expanded="1" path="animation-folder/BossEdge/" />
+        <folder expanded="1" path="animation-folder/SoldierSpawner/" />
+        <folder expanded="1" path="animation-folder/Faded/" />
+        <folder expanded="1" path="animation-folder/ExplosionLarge/" />
+        <folder expanded="1" path="animation-folder/InvisPlatform/" />
+        <folder expanded="1" path="animation-folder/BossIdle/" />
+        <folder expanded="1" path="animation-folder/FadeOut/" />
+    </folders-expanded>
+</c2uistate>

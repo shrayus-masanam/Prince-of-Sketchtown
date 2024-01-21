@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 05 Scripts</name>
+    <events>
+        <include>Level 04 Scripts</include>
+        <event-block sid="749439690538162">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="522626368426368" type="Prince">
+                    <param id="0" name="Object">Soldier</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="393373902986267" type="Prince">
+                    <param id="0" name="Magnitude">100</param>
+                    <param id="1" name="Duration">1</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="252114335673219">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="416132863384731" type="System">
+                    <param id="0" name="Interval (seconds)">1.8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="471473786497572" type="Bullet">
+                    <param id="0" name="Object">BulletDead</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="234158915121298" type="Bullet" />
+                <action id="-16" name="Wait" sid="385139395727288" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="291478594807383" type="BulletDead" />
+            </actions>
+        </event-block>
+        <event-block sid="861737268048244">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="350366408129449" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="615215465235679" type="Soldier">
+                    <param id="0" name="Instance variable">DamageDealt</param>
+                    <param id="1" name="Value">40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="755130719937869">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="832561343311530" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="135528378261067" type="Soldier">
+                    <param id="0" name="Instance variable">DamageDealt</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

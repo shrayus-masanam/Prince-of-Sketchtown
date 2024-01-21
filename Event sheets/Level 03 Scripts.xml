@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 03 Scripts</name>
+    <events>
+        <include>Level 02 Scripts</include>
+        <event-block sid="457417123490011">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="505752207467981" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="868423434372326" type="Prince">
+                    <param id="0" name="Instance variable">hasGun</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="859739002389564">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="299749771202016" type="HealPot">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="357842975087055" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Destroy" sid="646808368832257" type="HealPot" />
+                <action id="-5" name="Set width" sid="264070673826518" type="HealthBar">
+                    <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="267473093876254" type="HealthValue">
+                    <param id="0" name="Text">Prince.Health</param>
+                </action>
+                <action id="-9" name="Destroy" sid="553138279932260" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="897824617768993">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="438748421500519" type="HurtPot">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="504603702125876" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Destroy" sid="631142219543856" type="HurtPot" />
+                <action id="-5" name="Set width" sid="707671507127826" type="HealthBar">
+                    <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="887098037258617" type="HealthValue">
+                    <param id="0" name="Text">Prince.Health</param>
+                </action>
+                <action id="-9" name="Destroy" sid="293160730433714" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="733106681526280">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="568833894209779" type="HealPot">
+                    <param id="0" name="Object">Prince</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="390115500310522" type="Prince">
+                    <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="645373376840034" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Destroy" sid="429711841625080" type="HealPot" />
+                <action id="-5" name="Set width" sid="861171641709189" type="HealthBar">
+                    <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="557512172921253" type="HealthValue">
+                    <param id="0" name="Text">Prince.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="814907757317766">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="718232122749281" type="HurtPot">
+                    <param id="0" name="Object">Prince</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="344892755826173" type="Prince">
+                    <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="152318898496429" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Destroy" sid="520716982504486" type="HurtPot" />
+                <action id="-5" name="Set width" sid="781137703636707" type="HealthBar">
+                    <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="688531466905210" type="HealthValue">
+                    <param id="0" name="Text">Prince.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="311027746436249">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="583174687107142" type="Prince">
+                    <param id="0" name="Object">InstaKill</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="245619322840187" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-5" name="Set width" sid="307311500812495" type="HealthBar">
+                    <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="685950199657828" type="HealthValue">
+                    <param id="0" name="Text">Prince.Health</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

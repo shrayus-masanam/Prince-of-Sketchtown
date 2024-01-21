@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 01 Scripts</name>
+    <events>
+        <event-block sid="659439249357941">
+            <conditions>
+                <condition id="2" name="Key is down" sid="983493628429360" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="477917215980974">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="300055201679365" type="Prince">
+                            <param id="0" name="Instance variable">Crouching</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="267814923826031" type="Prince">
+                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="798643939390178" type="Prince">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="651333550139396">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="363228454948778" type="Prince">
+                            <param id="0" name="Instance variable">Crouching</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="861217883688784" type="Prince">
+                            <param id="0" name="Animation">&quot;Crouch&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="297048748021149" type="Prince">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="662149326424221">
+            <conditions>
+                <condition id="2" name="Key is down" sid="613175218088756" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="767864392987121">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="784100138801373" type="Prince">
+                            <param id="0" name="Instance variable">Crouching</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="670923681881985" type="Prince">
+                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="187611665086966" type="Prince">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="735310400636478">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="371665481435233" type="Prince">
+                            <param id="0" name="Instance variable">Crouching</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="164904379796056" type="Prince">
+                            <param id="0" name="Animation">&quot;Crouch&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="597212941554426" type="Prince">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="357382291728615">
+            <conditions>
+                <condition disabled="1" id="7" name="On any key released" sid="954930677997229" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="2" name="Stop" sid="472880669945295" type="Prince" />
+            </actions>
+        </event-block>
+        <event-block sid="917049794768935">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="965864885051449" type="Prince">
+                    <param id="0" name="Object">Spikes</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="302706926206842" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-5" name="Set width" sid="309192112840086" type="HealthBar">
+                    <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                </action>
+                <action id="0" name="Set text" sid="473761280862729" type="HealthValue">
+                    <param id="0" name="Text">Prince.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="281067374376490">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="809472111875436" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="421342723955775" type="Prince">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="928328760978621" type="Prince">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="111306598468354" type="Prince">
+                    <param id="0" name="Max Speed">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="111983763801017" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="737411640442626" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="809183665060571">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="479406229017985" type="Prince">
+                    <param id="0" name="Object">Door</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-43" name="Go to next/previous layout" sid="622545372377896" type="System">
+                    <param id="0" name="Which">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="854697725597049">
+            <conditions>
+                <condition id="0" name="Compare text" sid="501903556650334" type="HealthValue">
+                    <param id="0" name="Text to compare">&quot;-20&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="712259096326719" type="HealthValue">
+                    <param id="0" name="Text">&quot;0&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="680163804471064">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="284693049453652" type="Prince">
+                    <param id="0" name="Instance variable">Invincible</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="429897082628891" type="Prince">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">999999999</param>
+                </action>
+                <action id="-10" name="Set value" sid="884570647358328" type="Prince">
+                    <param id="0" name="Instance variable">MaxHealth</param>
+                    <param id="1" name="Value">999999999</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

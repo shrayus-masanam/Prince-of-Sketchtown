@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 02 Scripts</name>
+    <events>
+        <include>Level 01 Scripts</include>
+        <event-block sid="645385076473366">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="747523686891282" type="Prince">
+                    <param id="0" name="Object">Soldier</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="898101320185768">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="469257466912642" type="Prince">
+                            <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="506239391222798" type="Prince">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">Soldier.DamageDealt</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="980229532650444" type="HealthBar">
+                            <param id="0" name="Width">Prince.Health * HealthBar.Width / Prince.MaxHealth</param>
+                        </action>
+                        <action id="0" name="Set text" sid="144290789847821" type="HealthValue">
+                            <param id="0" name="Text">Prince.Health</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="663973011998542">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="284747834098339" type="Prince">
+                            <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="291118120278746" type="Soldier">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="815133367473459">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="724058076871589" type="Soldier">
+                    <param id="0" name="Instance variable">Direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;left&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="871770364931492" type="Soldier">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="608746816929657" type="Soldier">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="757238040400622" type="Soldier">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="919164317049610">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="264375346627096" type="Soldier">
+                    <param id="0" name="Instance variable">Direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;right&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="275176119713227" type="Soldier">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="482069874337840" type="Soldier">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="693573231196762" type="Soldier">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="885274836565973">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="207171206611198" type="Soldier">
+                    <param id="0" name="Object">EdgeMarker</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="363468295694575">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="492117200420791" type="Soldier">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="490016442658412" type="Soldier">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">&quot;right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="718794255399004">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="129587119168805" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="393340555710662" type="Soldier">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">&quot;left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="528776036701413">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="935632496626748" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="286701946366207" type="Prince">
+                    <param id="0" name="Instance variable">Crouching</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="789501933727114">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="757501776033569" type="Prince">
+                            <param id="0" name="Instance variable">Crouching</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="469551251088048" type="Prince">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="860161640363877" type="Prince">
+                            <param id="0" name="Max Speed">330</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="233770146093131" type="Prince">
+                            <param id="0" name="Jump strength">650</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="393943463989316">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="649805142636517" type="Prince">
+                    <param id="0" name="Instance variable">Crouching</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="909005123591753" type="Prince">
+                    <param id="0" name="Animation">&quot;CrouchIdle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="521162801863623" type="Prince">
+                    <param id="0" name="Max Speed">100</param>
+                </action>
+                <action behavior="Platform" id="4" name="Set jump strength" sid="902877578826521" type="Prince">
+                    <param id="0" name="Jump strength">500</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="779477286432524">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="180616237666285" type="Gun">
+                    <param id="0" name="Object">Prince</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="925419813889917" type="Gun" />
+                <action id="-13" name="Set boolean" sid="543011378939729" type="Prince">
+                    <param id="0" name="Instance variable">hasGun</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="493346273655083">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="363077112196543" type="Soldier">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="645528106147906">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Compare two values" sid="184131269758304" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Level 5&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="604105157976175" type="Soldier">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="392273456560316" type="Bullet" />
+                        <action behavior="Platform" id="1" name="Set max speed" sid="161554887116463" type="Soldier">
+                            <param id="0" name="Max Speed">350</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="206172689492308">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="582038079198365" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Level 5&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="469508456932382" type="Soldier">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="586063542866270" type="BossBar">
+                            <param id="0" name="Width">Soldier.Health * BossBar.Width / Soldier.MaxHealth + 3</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="957982677239442" type="Soldier">
+                            <param id="0" name="Max Speed">800</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="250367176979605">
+            <conditions>
+                <condition id="0" name="On click" sid="482163953032292" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="867662850872235" type="Prince">
+                    <param id="0" name="Instance variable">hasGun</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="924699697561355" type="Prince">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="775572360590867" type="Prince">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="339303590822183" type="Prince">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="564449788041470" type="Prince">
+                    <param id="0" name="Animation">&quot;HoldingGun&quot;</param>
+                    <param id="1" name="From">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="973821447153287" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="590234742760095" type="Prince">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="794695792905614" type="Prince">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="372267518802392">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="229534160632407" type="Bullet">
+                    <param id="0" name="Object">Dirt</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="241051896024997" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="834842227998673">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="989007307155830" type="Soldier">
+                    <param id="0" name="Object">Soldier</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="558656211875891">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="218223862643764" type="Soldier">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="952493909056642" type="Soldier">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">&quot;right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="913914793980242">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="234251565460976" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="438764612320424" type="Soldier">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">&quot;left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="365230751936819">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="881886265327933" type="System">
+                    <param id="0" name="First value">LayoutName</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">&quot;Level 5&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="712034742968551" type="BossBar">
+                    <param id="0" name="X">Soldier.X - (BossBar.Width/2)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="458623001032259" type="BossBar">
+                    <param id="0" name="Y">Soldier.Y -150</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="492584699106817">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="198286889704654" type="Soldier">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="841941210860307" type="Soldier">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="717548876816092" type="Soldier">
+                    <param id="0" name="Max Speed">0</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="479018099444657" type="Soldier">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="914135130330877">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="478112421157258" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Level 5&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="127019760836843" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="133033588601424" type="Prince">
+                            <param id="0" name="X">783</param>
+                            <param id="1" name="Y">450</param>
+                        </action>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="351635021016539" type="Prince">
+                            <param id="0" name="Magnitude">100</param>
+                            <param id="1" name="Duration">5</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="613187682495354" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="451133816739725" type="Flash" />
+                        <action id="-16" name="Wait" sid="411273842013145" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-43" name="Go to next/previous layout" sid="387974351356436" type="System">
+                            <param id="0" name="Which">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="126511925565792">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="213732184988081" type="Prince">
+                    <param id="0" name="Instance variable">hasKnife</param>
+                </condition>
+                <condition id="2" name="Mouse button is down" sid="592543227713815" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="276424140197347">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="788041236513753" type="System">
+                            <param id="0" name="First value">Mouse.X</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">Prince.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="960616066126404" type="Prince">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="955100911758878" type="Prince">
+                            <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="471416101315445" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="539696311311392" type="Prince">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="349809511861175">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="771018471364718" type="System">
+                            <param id="0" name="First value">Mouse.X</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">Prince.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="306064163634807" type="Prince">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="119669011955981" type="Prince">
+                            <param id="0" name="Animation">&quot;KnifeOut&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="427505621246047" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="835354408137238" type="Prince">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="930824552725257">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="621128841810985" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="733261951686286" type="Prince">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="679719217872132" type="Prince">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="208102661980979">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="870646614880661" type="System">
+                    <param id="0" name="First value">LayoutName</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">&quot;Level 10&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="637089279748733" type="BossBar">
+                    <param id="0" name="X">Boss.X - (BossBar.Width/2)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="107847782392952" type="BossBar">
+                    <param id="0" name="Y">Boss.Y -150</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
